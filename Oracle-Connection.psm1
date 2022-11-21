@@ -54,7 +54,7 @@ function Oracle-Connection
 	$Connection.Close()
 }
 
-Export-ModuleMember Oracle-Connection
+#Export-ModuleMember Oracle-Connection
 
 
 
