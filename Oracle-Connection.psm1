@@ -10,13 +10,13 @@
   https://www.oracle.com/database/technologies/odac-nuget-downloads.html
   https://download.oracle.com/otn/other/ole-oo4o/Oracle.ManagedDataAccess.12.2.1100.nupkg
 
- .Parameter OraUsername
+ .Parameter Username
   A username is required to connect to the database.
 
- .Parameter OraPassword
+ .Parameter Password
   The password required to connect to the database.
 
- .Parameter OraDataSource
+ .Parameter DataSource
   The tnsname address required to access the database server.
 
  .Parameter Query
