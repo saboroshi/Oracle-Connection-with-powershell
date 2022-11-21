@@ -1,20 +1,33 @@
-﻿<#	
-	===========================================================================
-	 Created with: 	SAPIEN Technologies, Inc., PowerShell Studio 2021 v5.8.196
-	 Created on:   	2022. 10. 03. 21:45
-	 Created by:   	Cservenyi Szabolcs
-	 Organization: 	
-	 Filename:     	Oracle-Connection.psm1
-	 ReleaseNotes:	The module helps you connect to an Oracle database and run arbitrary queries.
-					To use it, you need the Oracle.ManagedDataAccess.dll file of the ODP.NET component 
-					in the Oracle Data Access Components (ODAC) package, which contains the .NET objects.
+<#
+ .Synopsis
+  Connecting to an Oracle database.
 
-					Example
-  					Oracle-Connect -OraUsername "<username>" -OraPassword "<password>" -OraDataSource (DESCRIPTION= (ADDRESS=(<protocol_address_information>))(CONNECT_DATA= (SERVICE_NAME=<service_name>)))
-	 Version:		1.0
-	-------------------------------------------------------------------------
-	 Module Name: Oracle-Connection
-	===========================================================================
+ .Description
+  The module helps you connect to the Oracle database and run arbitrary queries.
+  To use it, you need the ODP.NET component in the Oracle Data Access Components (ODAC) package,
+  Oracle.ManagedDataAccess.dll file that contains the .NET objects.
+
+  https://www.oracle.com/database/technologies/odac-nuget-downloads.html
+  https://download.oracle.com/otn/other/ole-oo4o/Oracle.ManagedDataAccess.12.2.1100.nupkg
+
+ .Parameter OraUsername
+  A username is required to connect to the database.
+
+ .Parameter OraPassword
+  The password required to connect to the database.
+
+ .Parameter OraDataSource
+  The tnsname address required to access the database server.
+
+ .OraQuery parameter
+  The script/query to run on the database.
+
+ .Example
+  Oracle-Connection -Username "<username>" 
+  		    -Password "<password>" 
+                    -DataSource (DESCRIPTION= (ADDRESS=(<protocol_address information>))(CONNECT_DATA= (SERVICE_NAME=<service_name>)))
+		    -Query "SELECT * FROM <DATABASE.TABLE> WHERE ....."
+		    -DLLPath "C:\Oracle\Oracle.ManagedDataAccess.dll"
 #>
 
 function Oracle-Connection
