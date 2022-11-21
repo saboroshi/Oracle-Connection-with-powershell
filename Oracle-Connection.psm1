@@ -19,8 +19,11 @@
  .Parameter OraDataSource
   The tnsname address required to access the database server.
 
- .OraQuery parameter
+ .Parameter Query
   The script/query to run on the database.
+  
+  .Parameter DLLPath
+  The path to the Oracle.ManagedDataAccess.dll file.
 
  .Example
   Oracle-Connection -Username "<username>" 
